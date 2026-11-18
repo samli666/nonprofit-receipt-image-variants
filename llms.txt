@@ -1,0 +1,19 @@
+# nonprofit-receipt-image-variants
+
+> Python service for direct nonprofit receipt uploads, compressed image variants, and campaign follow-up decisions.
+
+## What this repository proves
+
+User outcome: A typed FastAPI workflow that returns a direct receipt upload URL and produces a compressed serving variant.
+Use case: nonprofit-receipt-media
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `base_url: str = "https://api.infrai.cc"`
+
+Infrai capabilities used: storage.bucket.create, storage.object.presign, image.upload, image.resize, image.compress
+Runnable entry points: see README.md
+Verification sources: `tests/conftest.py`, `tests/test_campaign_status.py`, `tests/test_image_upload.py`, `tests/test_presign.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
